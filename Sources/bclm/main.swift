@@ -32,7 +32,7 @@ struct BCLM: ParsableCommand {
         static let configuration = CommandConfiguration(
             abstract: "Writes a BCLM value.")
 
-        @Argument(help: "The value to set (50-100)")
+        @Argument(help: "The value to set (5-100)")
         var value: Int
 
         func validate() throws {
@@ -40,8 +40,8 @@ struct BCLM: ParsableCommand {
                 throw ValidationError("Must run as root.")
             }
 
-            guard value >= 50 && value <= 100 else {
-                throw ValidationError("Value must be between 50 and 100.")
+            guard value >= 5 && value <= 100 else {
+                throw ValidationError("Value must be between 5 and 100.")
             }
         }
 
